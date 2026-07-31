@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wish</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <section class="screen entry-screen is-active" id="entryScreen">
+      <div class="entry-copy">
+        <p class="eyebrow">Birthday surprise</p>
+        <h1>Make a wish come alive</h1>
+        <p class="intro">Write your name, light the candles, and receive a little moment of love.</p>
+
+        <form class="name-form" id="nameForm">
+          <label for="friendName">Your name</label>
+          <div class="input-row">
+            <input id="friendName" name="friendName" type="text" autocomplete="name" maxlength="28" placeholder="Write name here" required>
+            <button type="submit">Light Cake</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="preview-cake" aria-hidden="true">
+        <span class="preview-glow"></span>
+        <span class="preview-flame"></span>
+        <span class="preview-candle"></span>
+        <span class="preview-cake-top"></span>
+        <span class="preview-cake-body"></span>
+        <span class="preview-plate"></span>
+      </div>
+    </section>
+
+    <section class="screen birthday-screen" id="birthdayScreen" hidden>
+      <div class="birthday-card" id="birthdayCard">
+        <header class="message">
+          <p class="eyebrow">Close your eyes and wish</p>
+          <h2 id="birthdayTitle">Happy Birthday!</h2>
+          <p class="wish" id="wishLine">Your friendship makes life brighter.</p>
+        </header>
+
+        <section class="cake-stage" aria-label="Birthday cake with candles">
+          <div class="moon" aria-hidden="true"></div>
+          <div class="wind-layer" id="windLayer" aria-hidden="true"></div>
+          <div class="smoke-layer" id="smokeLayer" aria-hidden="true"></div>
+          <div class="heart-layer" id="heartLayer" aria-hidden="true"></div>
+
+          <div class="cake-wrap" id="cakeWrap">
+            <div class="candles" id="candles">
+              <div class="candle"><span class="wick"></span><span class="flame"></span></div>
+              <div class="candle"><span class="wick"></span><span class="flame"></span></div>
+              <div class="candle"><span class="wick"></span><span class="flame"></span></div>
+              <div class="candle"><span class="wick"></span><span class="flame"></span></div>
+              <div class="candle"><span class="wick"></span><span class="flame"></span></div>
+            </div>
+
+            <div class="cake">
+              <div class="drips"><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="top"></div>
+              <div class="body">
+                <span class="cream-line"></span>
+                <div class="sprinkles">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="plate"></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button type="button" id="blowButton">Blow Candles</button>
+          <button type="button" class="secondary" id="replayButton">Replay Magic</button>
+        </div>
+
+        <section class="photo-memories" aria-label="Birthday photo memories">
+          <div class="section-heading">
+            <p class="eyebrow">Little memories</p>
+            <h3>Moments made brighter</h3>
+          </div>
+          <div class="photo-grid">
+            <figure class="photo-card">
+              <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80" alt="Birthday cake with glowing candles">
+              <figcaption>Warm wishes</figcaption>
+            </figure>
+            <figure class="photo-card">
+              <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=80" alt="Colorful birthday balloons and celebration decorations">
+              <figcaption>Happy colors</figcaption>
+            </figure>
+            <figure class="photo-card">
+              <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=80" alt="Friends celebrating at a party">
+              <figcaption>Sweet celebration</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <article class="letter" id="letter" aria-label="Birthday letter for friend">
+          <p class="letter-kicker">A letter from the heart</p>
+          <h3 id="letterGreeting">Dear friend,</h3>
+          <p>
+            Today is your day, and I want you to feel how special you are. You are not just my friend;
+            you are a person who makes simple moments feel meaningful and ordinary days feel lighter.
+          </p>
+          <p>
+            Thank you for the laughs, the honest talks, the support, and every memory we have made together.
+            I am grateful for your kindness, your loyalty, and the beautiful way you care for the people around you.
+          </p>
+          <p>
+            My wish for you is a year full of peace, success, love, and moments that make your heart smile.
+            May every dream you carry quietly become closer, and may happiness find you in all the little places too.
+          </p>
+          <p class="letter-signoff">Happy Birthday, my friend. I am lucky to have you in my life.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

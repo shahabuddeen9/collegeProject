@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Clone - Online Shopping</title>
+  <link rel="stylesheet" href="amazon-styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="logo">Amazon</div>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="header-actions">
+        <div class="account">Account & Lists</div>
+        <div class="returns">Returns & Orders</div>
+        <div class="cart-icon" id="cartIcon">
+          <span id="cartCount">0</span> Cart
+        </div>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <nav class="nav">
+        <span class="category active" data-category="all">All</span>
+        <span class="category" data-category="electronics">Electronics</span>
+        <span class="category" data-category="books">Books</span>
+        <span class="category" data-category="clothing">Clothing</span>
+        <span class="category" data-category="home">Home & Kitchen</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Products Section -->
+    <div class="products-section">
+      <h2 id="sectionTitle">All Products</h2>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button id="closeCart" class="close-btn">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-summary" id="cartSummary" style="display: none;">
+      <div class="summary-item">
+        <span>Subtotal:</span>
+        <span id="subtotal">$0.00</span>
+      </div>
+      <div class="summary-item">
+        <span>Shipping:</span>
+        <span id="shipping">Free</span>
+      </div>
+      <div class="summary-item total">
+        <span>Total:</span>
+        <span id="total">$0.00</span>
+      </div>
+      <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Checkout</h3>
+        <button id="closeModal" class="close-btn">&times;</button>
+      </div>
+      <form id="checkoutForm">
+        <h4>Shipping Address</h4>
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="address" placeholder="Street Address" required>
+        <input type="text" id="city" placeholder="City" required>
+        <input type="text" id="state" placeholder="State" required>
+        <input type="text" id="zip" placeholder="ZIP Code" required>
+
+        <h4>Payment Method</h4>
+        <select id="paymentMethod" required>
+          <option value="">Select Payment Method</option>
+          <option value="credit">Credit Card</option>
+          <option value="debit">Debit Card</option>
+          <option value="wallet">Digital Wallet</option>
+        </select>
+        <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" required>
+
+        <div class="order-review">
+          <h4>Order Summary</h4>
+          <div id="orderItems"></div>
+          <div class="order-total">
+            <strong>Total: <span id="orderTotal">$0.00</span></strong>
+          </div>
+        </div>
+
+        <button type="submit" class="place-order-btn">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal" id="confirmationModal">
+    <div class="modal-content confirmation">
+      <h3>✓ Order Placed Successfully!</h3>
+      <p id="orderNumber"></p>
+      <p id="estimatedDate"></p>
+      <button id="continueShopping" class="continue-btn">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <script src="amazon-script.js"></script>
+</body>
+</html>
